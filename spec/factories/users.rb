@@ -9,5 +9,14 @@ FactoryGirl.define do
     trait :nil_name do
       name nil
     end
+
+    trait :diff_password do
+      password_confirmation '123Qwerty'
+    end
+
+    trait :short_password do
+      password '1234'
+      password_confirmation '1234'
+    end
   end
 end
