@@ -9,7 +9,10 @@ feature 'Visitors work with answers', type: :feature do
   end
 
   let(:user) { create(:user) }
-  let(:question) { create(:question, user) }
+
+  before do
+    create(:question, user: user)
+  end
 
   scenario 'click to #Дать ответ render #new action with authenticated user' do
     logged_in user.email, user.password

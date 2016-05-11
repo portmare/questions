@@ -1,4 +1,6 @@
 <blockquote>
-  <p><strong><%= question.title %></strong> - <%= question.user.name %> <%= question.created_at %></p> 
+  <p><strong><%= question.title %></strong> - <strong><%= question.user.name %></strong> <%= question.created_at %></p> 
   <p><%= question.body %></p>
+  <p><%= render partial: 'answers/answer', collection: question.answers %></p>
+  <p><%= add_answer_link(question) %></p>
 </blockquote>
