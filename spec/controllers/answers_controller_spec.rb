@@ -30,7 +30,7 @@ describe AnswersController, type: :controller do
 
       it 'assign new answer' do
         get :new, question_id: question
-        expect(assign(:answer)).to eq(Answer.new)
+        expect(assigns(:answer)).not_to eq(nil)
       end
     end
 
