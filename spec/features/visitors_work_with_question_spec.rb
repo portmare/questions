@@ -10,7 +10,7 @@ feature 'Visitors work with questions', type: :feature do
 
   let(:user) { create(:user) }
 
-  scenario 'click to #Задать вопрос redirected to sign in page with authenticated user' do
+  scenario 'click to #Задать вопрос render #new action with authenticated user' do
     logged_in user.email, user.password
     
     click_link 'Задать вопрос'
