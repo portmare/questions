@@ -2,3 +2,13 @@
 @import 'bootstrap';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+span.confirmed {
+  border-bottom: 1px dashed;
+  color: $link_color;
+}
+
+a {
+  text-decoration: underline;
+  font-size: 17.5px;
+}
