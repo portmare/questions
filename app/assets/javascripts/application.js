@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function($) {
+  $('span.confirmed').hover(
+    function() {
+      target = $(this).data('target');
+      $('.' + target).addClass('highlight');
+    }, 
+    function() {
+      target = $(this).data('target');
+      $('.' + target).removeClass('highlight');
+  });
+});
