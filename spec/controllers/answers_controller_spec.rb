@@ -1,15 +1,15 @@
 # spec/controllers/answers_controller_spec.rb
 require 'rails_helper'
 
-describe AnswersControllerController, type: :controller do
+describe AnswersController, type: :controller do
   describe 'with no authenticated user' do
     it 'GET #new redirected to sign in path' do
-      get :new, question: build_stubbed(:question)
+      get :new, question_id: build_stubbed(:question)
       expect(response).to redirect_to(new_user_session_path)
     end
 
     it 'POST #create redirected to sign in path' do
-      post :create, answer: attributes_for(:answer), question: build_stubbed(:question)
+      post :create, answer: attributes_for(:answer), question_id: build_stubbed(:question)
       expect(response).to redirect_to(new_user_session_path)
     end
   end
@@ -24,25 +24,25 @@ describe AnswersControllerController, type: :controller do
 
     describe 'GET #new' do
       it 'returns http success' do
-        get :new, question: question
+        get :new, question_id: question
         expect(response).to have_http_status(:success)
       end
 
       it 'assign new answer' do
-        get :new, question: question
+        get :new, question_id: question
         expect(assign(:answer)).to eq(Answer.new)
       end
     end
 
     describe 'POST #create' do
       it 'redirect to root path' do
-        post :create, answer: attributes_for(:answer), question: question
+        post :create, answer: attributes_for(:answer), question_id: question
         expect(response).to redirect_to(root_path)
       end
 
       it 'add answer to db' do
         expect {
-          post :create, answer: attributes_for(:answer), question: question
+          post :create, answer: attributes_for(:answer), question_id: question
         }.to change { Answer.count }.by(1)
       end
     end
