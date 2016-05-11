@@ -22,7 +22,7 @@ describe CommentsHelper, type: :helper do
 
     it 'return confirmed date if comment is confirmed' do
       comment = create(:comment, :confirmed)
-      expect(confirmed_at(comment)).to match(/<span class=\"confirmed\">принято<\/span>/)
+      expect(confirmed_at(comment)).to match(/<span class=\"confirmed\" data-target=\"comment(.*)\">принято<\/span>/)
     end
   end
 

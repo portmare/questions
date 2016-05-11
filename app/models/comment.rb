@@ -5,4 +5,6 @@ class Comment < ActiveRecord::Base
   delegate :question, to: :answer
 
   validates :body, presence: true
+
+  scope :confirmable, -> { where.not(confirmed_at: nil) }
 end

@@ -5,7 +5,7 @@ module CommentsHelper
   end
 
   def confirmed_at(comment)
-    " #{content_tag(:span, 'принято', class: 'confirmed')} #{time_ago_in_words(comment.confirmed_at)}".html_safe if comment.confirmed_at 
+    " #{content_tag(:span, 'принято', class: 'confirmed', data: { target: "comment#{comment.id}" })} #{time_ago_in_words(comment.confirmed_at)}".html_safe if comment.confirmed_at 
   end
 
   def confirm_comment_link(comment)
