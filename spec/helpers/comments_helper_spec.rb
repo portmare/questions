@@ -25,4 +25,16 @@ describe CommentsHelper, type: :helper do
       expect(confirmed_at(comment)).to match(/<span class=\"confirmed\">принято<\/span>/)
     end
   end
+
+  describe '#confirm_comment_link' do
+    it 'return nil if comment is not confirmed' do
+      comment = create(:comment)
+      expect(confirm_comment_link(comment)).to match(/<a (.*)>Принять правку<\/a>/)
+    end
+
+    it 'return confirmed date if comment is confirmed' do
+      comment = create(:comment, :confirmed)
+      expect(confirm_comment_link(comment)).to eq(nil)
+    end
+  end
 end
