@@ -1,5 +1,5 @@
 <blockquote>
-  <p><%= answer.body %> - <strong><%= answer.user.name %></strong> <%= answer.created_at %></p>
+  <p><%= answer.body %> - <strong><%= answer.user.name %></strong> <%= time_ago_in_words(answer.created_at) %></p>
   <p><%= render partial: 'comments/comment', collection: answer.comments %></p>
   <p><%= link_to 'Предложить правку', new_question_answer_comment_path(answer.question, answer) %></p>
 </blockquote>

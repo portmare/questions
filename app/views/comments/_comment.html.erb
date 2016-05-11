@@ -1,4 +1,4 @@
 <blockquote>
-  <p><%= confirm_icon(comment) %> <%= comment.body %> - <strong><%= comment.user.name %></strong> <%= comment.created_at %><%= confirmed_at(comment) %></p>
+  <p><%= confirm_icon(comment) %> <%= comment.body %> - <strong><%= comment.user.name %></strong> <%= time_ago_in_words(comment.created_at) %><%= confirmed_at(comment) %></p>
   <%= confirm_comment_link(comment) %>
 </blockquote>

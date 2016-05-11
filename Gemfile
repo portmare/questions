@@ -54,3 +54,6 @@ gem 'font-awesome-sass', '~> 4.4.0'
 
 # auth
 gem 'devise'
+
+# localize
+gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'rails-4-x'
