@@ -18,15 +18,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment.body = "#{@comment.answer.body} #{@comment.body}"
   end
 
   def update
-    if @comment.update(comment_params)
-      @comment.touch(:confirmed_at)
-      redirect_to root_path, notice: 'Правка успешно принята'
-    else
-      render :edit
-    end
+    @comment.touch(:confirmed_at)
+    redirect_to root_path, notice: 'Правка успешно принята'
   end
 
   private

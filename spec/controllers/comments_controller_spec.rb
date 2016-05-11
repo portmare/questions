@@ -93,19 +93,18 @@ describe CommentsController, type: :controller do
       end
 
       it "returns http success" do
-        patch :update, question_id: @question, answer_id: @answer, comment: { body: '123456' }, id: @comment
+        patch :update, question_id: @question, answer_id: @answer, id: @comment
         expect(response).to redirect_to(root_path)
       end
 
       it 'update and confirmed comment in db' do
-        patch :update, question_id: @question, answer_id: @answer, comment: { body: '123456' }, id: @comment
-        expect(assigns(:comment).body).to eq('123456')
+        patch :update, question_id: @question, answer_id: @answer, id: @comment
         expect(assigns(:comment).confirmed_at).not_to eq(nil)
       end
 
       it 'redirected with no answer owner user' do
         sign_in user1
-        patch :update, question_id: @question, answer_id: @answer, comment: { body: '123456' }, id: @comment
+        patch :update, question_id: @question, answer_id: @answer, id: @comment
         expect(response).to redirect_to(root_path)
       end
     end
