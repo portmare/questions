@@ -10,7 +10,7 @@ FactoryGirl.define do
       body nil
     end
 
-    trait :comfirmed do
+    trait :confirmed do
       confirmed_at "2016-05-11 22:34:53"
     end
   end
