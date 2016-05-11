@@ -2,7 +2,7 @@
 require 'rails_helper'
 
 feature 'Visitors signs in' do
-  let(:user) { build_stubbed(:user) }
+  let(:user) { create(:user) }
 
   scenario 'with valid params' do
     logged_in(user.email, user.password)

@@ -6,4 +6,10 @@ module ApplicationHelper
       "#{link_to('Регистрация', new_user_registration_path)} / #{link_to('Вход', new_user_session_path)}".html_safe
     end
   end
+
+  def content_title
+    title = 'Вопросы'
+    title += " - #{content_for(:title)}" if content_for?(:title)
+    title
+  end
 end

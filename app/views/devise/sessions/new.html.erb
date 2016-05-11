@@ -1,0 +1,17 @@
+<h2>Вход</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email, class: 'control-label' %>
+    <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Электронная почта' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, class: 'control-label' %>
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Пароль' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Войти", class: 'btn btn-success' %>
+  </div>
+<% end %>

@@ -14,4 +14,15 @@ describe ApplicationHelper, type: :helper do
       expect(helper.navigation_links).to match(/<a (.*)Выход<\/a>/)
     end
   end
+
+  describe "#content_title" do
+    it 'displays default title if :title is nil' do
+      expect(helper.content_title).to match(/Вопросы/)
+    end
+
+    it 'displays extended title if :title is present' do
+      helper.content_for(:title) { 'Регистрация' }
+      expect(helper.content_title).to match(/Вопросы - Регистрация/)
+    end
+  end
 end
