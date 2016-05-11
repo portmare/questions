@@ -1,0 +1,10 @@
+<%= form_for([@question, @answer]) do |f| %>
+  <div class="form-group">
+    <%= f.label :body, autofocus: true, placeholder: 'Дать ответ', class: 'control-label' %>
+    <%= f.text_field :body, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Дать ответ', class: 'btn btn-info' %>
+  </div>
+<% end %>
