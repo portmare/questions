@@ -48,4 +48,11 @@ describe "questions/index.html.erb", type: :view do
       expect(rendered).to have_content(question.body)
     end
   end
+
+  describe 'link to add question' do
+    it 'displays for all' do
+      render
+      expect(rendered).to have_link('Задать вопрос')
+    end
+  end
 end

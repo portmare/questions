@@ -1,0 +1,15 @@
+<%= form_for(@question) do |f| %>
+  <div class="form-control">
+    <%= f.label :title, class: 'control-label' %>
+    <%= f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Заголовок вопроса' %>
+  </div>
+
+  <div class="form-control">
+    <%= f.label :body, class: 'control-label' %>
+    <%= f.text_field :body, class: 'form-control', placeholder: 'Подробное описание ситуации' %>
+  </div>
+
+  <div class="form-control">
+    <%= f.submit 'Задать вопрос' %>
+  </div>
+<% end %>

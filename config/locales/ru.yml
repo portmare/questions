@@ -1,0 +1,6 @@
+ru:
+  activerecord:
+    attributes:
+      question:
+        title: 'Заголовок вопроса:'
+        body: 'Подробное описание ситуации:'
