@@ -10,7 +10,10 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(answer_params)
 
     if @answer.save
-      redirect_to root_path, notice: 'Ответ успешно создан'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Ответ успешно создан' }
+        format.js
+      end
     else
       render :new
     end

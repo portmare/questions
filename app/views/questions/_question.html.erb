@@ -1,6 +1,6 @@
 <blockquote>
   <p><strong><%= question.title %></strong> - <strong><%= question.user.name %></strong> <%= time_ago_in_words(question.created_at) %></p> 
   <p><%= question.body %></p>
-  <p><%= render partial: 'answers/answer', collection: question.answers %></p>
+  <div id="answer_block_<%= question.id %>"><%= render partial: 'answers/answer', collection: question.answers %></div>
   <p><%= add_answer_link(question) %></p>
 </blockquote>

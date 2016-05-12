@@ -1,0 +1,4 @@
+$('#answer_block_<%= @question.id %>').append("<%=j render @answer %>");
+$("#add_answer_link_<%= @question.id %>").show('slow', function() {
+  $("#add_answer_form_<%= @question.id %>").remove();
+});
