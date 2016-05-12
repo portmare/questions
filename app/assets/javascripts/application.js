@@ -17,13 +17,14 @@
 //= require_tree .
 
 $(document).ready(function($) {
-  $('span.confirmed').hover(
-    function() {
+  $(document).on({
+    mouseenter: function() {
       target = $(this).data('target');
       $('.' + target).addClass('highlight');
-    }, 
-    function() {
+    },
+    mouseleave: function() {
       target = $(this).data('target');
       $('.' + target).removeClass('highlight');
-  });
+    }
+  }, 'span.confirmed');
 });
