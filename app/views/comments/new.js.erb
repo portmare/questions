@@ -1,0 +1,7 @@
+if ($("#add_comment_form_<%= @answer.id %>").length == 0) {
+  $("#add_comment_link_<%= @answer.id %>").hide('slow', function() {
+    $(this).after("<%=j render 'form' %>");
+  });
+} else {
+  $("#add_comment_form_<%= @answer.id %>").html("<%=j render 'form' %>");
+}

@@ -11,7 +11,10 @@ class CommentsController < ApplicationController
     @comment = @answer.comments.build(comment_params)
 
     if @comment.save
-      redirect_to root_path, notice: 'Правка успешно создана'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Правка успешно создана' }
+        format.js
+      end
     else
       render :new
     end

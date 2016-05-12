@@ -1,0 +1,4 @@
+$('#comment_block_<%= @answer.id %>').append("<%=j render @comment %>");
+$("#add_comment_link_<%= @answer.id %>").show('slow', function() {
+  $("#add_comment_form_<%= @answer.id %>").remove();
+})
