@@ -2,11 +2,11 @@
   <h1>Вопросы</h1>
   <h3><%= navigation_links %></h3>
 </div>
-<% if @questions.empty? %>
-  <div id="empty_questions">Вопросов пока нет</div>
-<% else %>
-  <div id="question_block">
+<div id="question_block">
+  <% if @questions.empty? %>
+    <div id="empty_questions">Вопросов пока нет</div>
+  <% else %>
     <%= render partial: 'question', collection: @questions %>
-  </div>
-<% end %>
+  <% end %>
+</div>
 <%= link_to 'Задать вопрос', new_question_path, remote: true, id: 'new_question_link' %>
