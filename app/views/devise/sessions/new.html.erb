@@ -1,6 +1,8 @@
 <h2>Вход</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render 'shared/errors', object: resource %>
+
   <div class="form-group">
     <%= f.label :email, class: 'control-label' %>
     <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Электронная почта' %>

@@ -14,9 +14,16 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
+
   def authorize!
     unless signed_in?
-      redirect_to new_user_session_path
+      respond_to do |format|
+        format.html { redirect_to new_user_session_path }
+        format.js { render js: "window.location = '#{new_user_session_path}'" }
+      end
     end
   end
 end
