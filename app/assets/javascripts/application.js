@@ -27,4 +27,8 @@ $(document).ready(function($) {
       $('.' + target).removeClass('highlight');
     }
   }, 'span.confirmed');
+
+  window.setTimeout(function() {
+    $('.alert').alert('close');
+  }, 10000);
 });
