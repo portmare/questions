@@ -1,0 +1,7 @@
+if ($('#empty_questions').length) {
+  $('#empty_questions').remove();
+}
+$('#question_block').append("<%=j render @question %>");
+$('#new_question_link').show('slow', function() {
+  $('#new_question').remove();
+});

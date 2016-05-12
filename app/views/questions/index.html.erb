@@ -3,8 +3,10 @@
   <h3><%= navigation_links %></h3>
 </div>
 <% if @questions.empty? %>
-  <p>Вопросов пока нет</p>
+  <div id="empty_questions">Вопросов пока нет</div>
 <% else %>
-  <%= render partial: 'question', collection: @questions %>
+  <div id="question_block">
+    <%= render partial: 'question', collection: @questions %>
+  </div>
 <% end %>
-<%= link_to 'Задать вопрос', new_question_path %>
+<%= link_to 'Задать вопрос', new_question_path, remote: true, id: 'new_question_link' %>

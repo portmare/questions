@@ -13,7 +13,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to root_path, notice: 'Вопрос успешно добавлен'
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: 'Вопрос успешно добавлен' }
+        format.js
+      end
     else
       render :new
     end

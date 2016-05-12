@@ -1,0 +1,7 @@
+if ($('#new_question').length == 0) {
+  $('#new_question_link').hide('slow', function() {
+    $(this).after("<%=j render 'form' %>");
+  });
+} else {
+  $('#new_question').html("<%=j render 'form' %>");
+}

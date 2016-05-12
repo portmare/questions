@@ -1,4 +1,6 @@
-<%= form_for(@question) do |f| %>
+<%= form_for(@question, remote: true) do |f| %>
+  <%= render 'shared/errors', object: @question %>
+
   <div class="form-group">
     <%= f.label :title, class: 'control-label' %>
     <%= f.text_field :title, autofocus: true, class: 'form-control', placeholder: 'Заголовок вопроса' %>
