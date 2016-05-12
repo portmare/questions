@@ -1,0 +1,2 @@
+$("#answer_body_<%= @answer.id %>").html("<%=j answer_body(@answer) %>");
+$('#comment_block_<%= @answer.id %>').html("<%=j render partial: 'comments/comment', collection: @answer.comments %>");

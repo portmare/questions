@@ -26,7 +26,10 @@ class CommentsController < ApplicationController
 
   def update
     @comment.touch(:confirmed_at)
-    redirect_to root_path, notice: 'Правка успешно принята'
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Правка успешно принята' }
+      format.js
+    end
   end
 
   private

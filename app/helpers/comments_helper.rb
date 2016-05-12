@@ -9,6 +9,6 @@ module CommentsHelper
   end
 
   def confirm_comment_link(comment)
-    link_to('Принять правку', edit_question_answer_comment_path(comment.question, comment.answer, comment)) unless comment.confirmed_at
+    link_to('Принять правку', edit_question_answer_comment_path(comment.question, comment.answer, comment), remote: true, id: "edit_comment_#{comment.id}") unless comment.confirmed_at
   end
 end
